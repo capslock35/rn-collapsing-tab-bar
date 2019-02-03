@@ -6,10 +6,12 @@ import {
   StyleSheet,
   Text,
   View,
-  Animated
+  Animated,
+  Dimensions
 } from 'react-native';
 const Button = require('./Button');
-
+let window = Dimensions.get('window');
+let height = window.height;
 const DefaultTabBar =createReactClass({
   // propTypes: {
   //   goToPage: React.PropTypes.func,
@@ -39,7 +41,6 @@ const DefaultTabBar =createReactClass({
     const { activeTextColor, inactiveTextColor, textStyle } = this.props;
     const textColor = isTabActive ? activeTextColor : inactiveTextColor;
     const fontWeight = isTabActive ? 'bold' : 'normal';
-
     return (<Button
       style={styles.flexOne}
       key={name}
@@ -86,14 +87,13 @@ const styles = StyleSheet.create({
   tab: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
-    paddingBottom: 10
+    justifyContent: 'center'
   },
   flexOne: {
     flex: 1
   },
   tabs: {
-    height: 50,
+    height: height*0.07,
     flexDirection: 'row',
     justifyContent: 'space-around',
     borderWidth: 1,
