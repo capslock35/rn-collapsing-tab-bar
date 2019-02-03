@@ -87,7 +87,8 @@ const styles = StyleSheet.create({
   tab: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    paddingBottom: height*0.005
   },
   flexOne: {
     flex: 1
